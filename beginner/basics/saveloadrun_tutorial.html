@@ -425,34 +425,33 @@ Arguments other than a weight enum or `None` for 'weights' are deprecated since 
 Downloading: "https://download.pytorch.org/models/vgg16-397923af.pth" to /var/lib/jenkins/.cache/torch/hub/checkpoints/vgg16-397923af.pth
 
   0%|          | 0.00/528M [00:00&lt;?, ?B/s]
-  0%|          | 992k/528M [00:00&lt;00:55, 9.90MB/s]
-  0%|          | 2.54M/528M [00:00&lt;00:40, 13.6MB/s]
-  1%|          | 4.89M/528M [00:00&lt;00:29, 18.6MB/s]
-  2%|1         | 8.63M/528M [00:00&lt;00:20, 26.7MB/s]
-  3%|2         | 14.4M/528M [00:00&lt;00:13, 38.7MB/s]
-  4%|4         | 23.4M/528M [00:00&lt;00:09, 57.7MB/s]
-  7%|7         | 37.6M/528M [00:00&lt;00:05, 87.3MB/s]
- 11%|#1        | 60.0M/528M [00:00&lt;00:03, 134MB/s]
- 16%|#6        | 86.9M/528M [00:00&lt;00:02, 180MB/s]
- 22%|##1       | 114M/528M [00:01&lt;00:02, 212MB/s]
- 27%|##6       | 141M/528M [00:01&lt;00:01, 234MB/s]
- 31%|###1      | 164M/528M [00:01&lt;00:01, 236MB/s]
- 35%|###5      | 187M/528M [00:01&lt;00:01, 235MB/s]
- 40%|###9      | 209M/528M [00:01&lt;00:01, 236MB/s]
- 44%|####4     | 232M/528M [00:01&lt;00:01, 238MB/s]
- 48%|####8     | 255M/528M [00:01&lt;00:01, 237MB/s]
- 53%|#####2    | 278M/528M [00:01&lt;00:01, 236MB/s]
- 57%|#####6    | 300M/528M [00:01&lt;00:01, 236MB/s]
- 61%|######1   | 323M/528M [00:01&lt;00:00, 237MB/s]
- 66%|######5   | 346M/528M [00:02&lt;00:00, 239MB/s]
- 70%|#######   | 370M/528M [00:02&lt;00:00, 240MB/s]
- 75%|#######4  | 393M/528M [00:02&lt;00:00, 243MB/s]
- 79%|#######8  | 416M/528M [00:02&lt;00:00, 242MB/s]
- 83%|########3 | 440M/528M [00:02&lt;00:00, 240MB/s]
- 88%|########7 | 462M/528M [00:02&lt;00:00, 239MB/s]
- 92%|#########2| 486M/528M [00:02&lt;00:00, 240MB/s]
- 96%|#########6| 509M/528M [00:02&lt;00:00, 242MB/s]
-100%|##########| 528M/528M [00:02&lt;00:00, 198MB/s]
+  0%|          | 1.81M/528M [00:00&lt;00:29, 19.0MB/s]
+  1%|          | 5.04M/528M [00:00&lt;00:19, 27.7MB/s]
+  2%|1         | 9.63M/528M [00:00&lt;00:14, 37.0MB/s]
+  3%|3         | 17.1M/528M [00:00&lt;00:10, 53.1MB/s]
+  5%|5         | 28.8M/528M [00:00&lt;00:06, 78.2MB/s]
+  9%|8         | 47.2M/528M [00:00&lt;00:04, 117MB/s]
+ 13%|#3        | 70.9M/528M [00:00&lt;00:02, 160MB/s]
+ 18%|#8        | 95.1M/528M [00:00&lt;00:02, 190MB/s]
+ 23%|##2       | 119M/528M [00:00&lt;00:02, 210MB/s]
+ 27%|##7       | 143M/528M [00:01&lt;00:01, 223MB/s]
+ 32%|###1      | 167M/528M [00:01&lt;00:01, 231MB/s]
+ 36%|###6      | 190M/528M [00:01&lt;00:01, 235MB/s]
+ 41%|####      | 215M/528M [00:01&lt;00:01, 242MB/s]
+ 45%|####5     | 240M/528M [00:01&lt;00:01, 246MB/s]
+ 50%|####9     | 264M/528M [00:01&lt;00:01, 248MB/s]
+ 55%|#####4    | 288M/528M [00:01&lt;00:01, 249MB/s]
+ 59%|#####9    | 311M/528M [00:01&lt;00:00, 249MB/s]
+ 64%|######3   | 335M/528M [00:01&lt;00:00, 244MB/s]
+ 68%|######7   | 359M/528M [00:01&lt;00:00, 240MB/s]
+ 73%|#######2  | 383M/528M [00:02&lt;00:00, 245MB/s]
+ 77%|#######7  | 407M/528M [00:02&lt;00:00, 248MB/s]
+ 82%|########1 | 431M/528M [00:02&lt;00:00, 248MB/s]
+ 86%|########6 | 455M/528M [00:02&lt;00:00, 249MB/s]
+ 91%|######### | 478M/528M [00:02&lt;00:00, 248MB/s]
+ 95%|#########5| 503M/528M [00:02&lt;00:00, 250MB/s]
+100%|#########9| 527M/528M [00:02&lt;00:00, 252MB/s]
+100%|##########| 528M/528M [00:02&lt;00:00, 211MB/s]
 </pre></div>
 </div>
 <p>To load model weights, you need to create an instance of the same model first, and then load the parameters
@@ -534,7 +533,7 @@ the model, in which case we can pass <code class="docutils literal notranslate">
 <div class="section" id="related-tutorials">
 <h2>Related Tutorials<a class="headerlink" href="#related-tutorials" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html">Saving and Loading a General Checkpoint in PyTorch</a></p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.862 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.641 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-beginner-basics-saveloadrun-tutorial-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/3648b0dccaebca71b234070fe2124770/saveloadrun_tutorial.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">saveloadrun_tutorial.py</span></code></a></p>
