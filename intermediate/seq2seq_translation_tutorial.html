@@ -641,7 +641,7 @@ Counting words...
 Counted words:
 fra 4345
 eng 2803
-['tu es un sale menteur !', 'you re a filthy liar !']
+['nous sommes pieges !', 'we re trapped !']
 </pre></div>
 </div>
 </div>
@@ -1083,65 +1083,65 @@ encoder and decoder are initialized and run <code class="docutils literal notran
 <li><img alt="seq2seq translation tutorial" class="sphx-glr-multi-img" src="../_images/sphx_glr_seq2seq_translation_tutorial_001.png" srcset="../_images/sphx_glr_seq2seq_translation_tutorial_001.png"/></li>
 <li><img alt="seq2seq translation tutorial" class="sphx-glr-multi-img" src="../_images/sphx_glr_seq2seq_translation_tutorial_002.png" srcset="../_images/sphx_glr_seq2seq_translation_tutorial_002.png"/></li>
 </ul>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1m 24s (- 19m 46s) (5000 6%) 2.8428
-2m 41s (- 17m 30s) (10000 13%) 2.2689
-3m 58s (- 15m 53s) (15000 20%) 1.9747
-5m 14s (- 14m 26s) (20000 26%) 1.7508
-6m 31s (- 13m 2s) (25000 33%) 1.5317
-7m 48s (- 11m 42s) (30000 40%) 1.3904
-9m 3s (- 10m 21s) (35000 46%) 1.2102
-10m 19s (- 9m 1s) (40000 53%) 1.1046
-11m 34s (- 7m 43s) (45000 60%) 1.0002
-12m 50s (- 6m 25s) (50000 66%) 0.8707
-14m 5s (- 5m 7s) (55000 73%) 0.8142
-15m 21s (- 3m 50s) (60000 80%) 0.7376
-16m 37s (- 2m 33s) (65000 86%) 0.6766
-17m 53s (- 1m 16s) (70000 93%) 0.6263
-19m 9s (- 0m 0s) (75000 100%) 0.5644
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>1m 22s (- 19m 18s) (5000 6%) 2.8842
+2m 39s (- 17m 15s) (10000 13%) 2.3043
+3m 55s (- 15m 40s) (15000 20%) 1.9424
+5m 11s (- 14m 16s) (20000 26%) 1.7407
+6m 27s (- 12m 55s) (25000 33%) 1.5356
+7m 44s (- 11m 36s) (30000 40%) 1.3327
+9m 0s (- 10m 18s) (35000 46%) 1.2190
+10m 17s (- 9m 0s) (40000 53%) 1.1022
+11m 34s (- 7m 42s) (45000 60%) 0.9479
+12m 50s (- 6m 25s) (50000 66%) 0.8986
+14m 7s (- 5m 8s) (55000 73%) 0.8079
+15m 23s (- 3m 50s) (60000 80%) 0.7256
+16m 39s (- 2m 33s) (65000 86%) 0.6573
+17m 55s (- 1m 16s) (70000 93%) 0.6105
+19m 11s (- 0m 0s) (75000 100%) 0.5475
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">evaluateRandomly</span><span class="p">(</span><span class="n">encoder1</span><span class="p">,</span> <span class="n">attn_decoder1</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; nous tentons de reduire les depenses .
-= we re trying to cut down on expenses .
-&lt; we re having to have the . &lt;EOS&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; je suis finlandais mais je parle aussi suedois .
+= i am finnish but i speak also swedish .
+&lt; i am finnish but i also also also . &lt;EOS&gt;
 
-&gt; vous etes matinal .
-= you are early .
-&lt; you re early . &lt;EOS&gt;
+&gt; je suis au dessus .
+= i m upstairs .
+&lt; i m at the . &lt;EOS&gt;
 
-&gt; nous ne sommes pas impliques .
-= we re not involved .
-&lt; we aren t involved . &lt;EOS&gt;
+&gt; nous ne sommes pas invitees .
+= we re not invited .
+&lt; we re not invited . &lt;EOS&gt;
 
-&gt; il est comme mort .
-= he is as good as dead .
-&lt; he is as as as dead . &lt;EOS&gt;
+&gt; je suis profondement offense par ceci .
+= i m deeply offended by this .
+&lt; i m deeply offended by this . &lt;EOS&gt;
 
-&gt; je suis immunisee .
-= i m immune .
-&lt; i m disgusted . &lt;EOS&gt;
+&gt; tu preches une convaincue .
+= you re preaching to the choir .
+&lt; you re preaching to the choir . &lt;EOS&gt;
 
-&gt; nous sommes maintenant prets .
-= we re ready now .
-&lt; we re ready now . &lt;EOS&gt;
+&gt; tu es deux fois plus forte que moi .
+= you are twice as strong as me .
+&lt; you are twice as strong as i am . .
 
-&gt; il est a son bureau .
-= he is at his office .
-&lt; he is at his desk . &lt;EOS&gt;
+&gt; je suis votre chef .
+= i m your boss .
+&lt; i m your boss . &lt;EOS&gt;
 
-&gt; vous etes consciencieuses .
-= you re conscientious .
-&lt; you re conscientious . &lt;EOS&gt;
+&gt; vous etes un horrible danseur .
+= you re a terrible dancer .
+&lt; you re a terrible dancer . &lt;EOS&gt;
 
-&gt; nous sommes touches .
-= we re touched .
-&lt; we re touched . &lt;EOS&gt;
+&gt; je rechigne a lui rendre visite .
+= i m reluctant to visit him .
+&lt; i m starting to every every . &lt;EOS&gt;
 
-&gt; il est proche du president .
-= he is close to the president .
-&lt; he is well to the . . &lt;EOS&gt;
+&gt; vous les terrifiez .
+= they re terrified of you .
+&lt; you re always closer . &lt;EOS&gt;
 </pre></div>
 </div>
 <div class="section" id="visualizing-attention">
@@ -1158,7 +1158,7 @@ output steps:</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><a class="sphx-glr-backref-module-torch sphx-glr-backref-type-py-class sphx-glr-backref-instance" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="torch.Tensor"><span class="n">attentions</span></a><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
 </pre></div>
 </div>
-<img alt="seq2seq translation tutorial" class="sphx-glr-single-img" src="../_images/sphx_glr_seq2seq_translation_tutorial_003.png" srcset="../_images/sphx_glr_seq2seq_translation_tutorial_003.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f1fdce5e3b0&gt;
+<img alt="seq2seq translation tutorial" class="sphx-glr-single-img" src="../_images/sphx_glr_seq2seq_translation_tutorial_003.png" srcset="../_images/sphx_glr_seq2seq_translation_tutorial_003.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage object at 0x7f175190aec0&gt;
 </pre></div>
 </div>
 <p>For a better viewing experience we will do the extra work of adding axes
@@ -1206,7 +1206,7 @@ and labels:</p>
 <li><img alt="seq2seq translation tutorial" class="sphx-glr-multi-img" src="../_images/sphx_glr_seq2seq_translation_tutorial_007.png" srcset="../_images/sphx_glr_seq2seq_translation_tutorial_007.png"/></li>
 </ul>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>input = elle a cinq ans de moins que moi .
-output = she is five years younger me . &lt;EOS&gt;
+output = she s five years younger than i am . &lt;EOS&gt;
 /var/lib/jenkins/workspace/intermediate_source/seq2seq_translation_tutorial.py:808: UserWarning:
 
 FixedFormatter should only be used together with FixedLocator
@@ -1216,11 +1216,11 @@ FixedFormatter should only be used together with FixedLocator
 FixedFormatter should only be used together with FixedLocator
 
 input = elle est trop petit .
-output = she s too loud . &lt;EOS&gt;
+output = she is too drunk . &lt;EOS&gt;
 input = je ne crains pas de mourir .
-output = i m not scared to die . &lt;EOS&gt;
+output = i m not scared of die . &lt;EOS&gt;
 input = c est un jeune directeur plein de talent .
-output = he s a talented young great . &lt;EOS&gt;
+output = he s a talented young young . &lt;EOS&gt;
 </pre></div>
 </div>
 </div>
@@ -1250,7 +1250,7 @@ this:</p>
 </ul>
 </li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 19 minutes  24.282 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 19 minutes  25.888 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-intermediate-seq2seq-translation-tutorial-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/3baf9960a4be104931872ff3ffda07b7/seq2seq_translation_tutorial.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">seq2seq_translation_tutorial.py</span></code></a></p>

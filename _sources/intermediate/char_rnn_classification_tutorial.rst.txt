@@ -358,9 +358,9 @@ pre-computing batches of Tensors.
 
  .. code-block:: none
 
-    tensor([[-2.9231, -2.8636, -2.8957, -2.9073, -2.9414, -2.8794, -2.7432, -2.9448,
-             -2.9212, -2.8687, -2.8823, -2.8573, -2.8797, -2.9525, -2.8839, -2.9577,
-             -2.9149, -2.8327]], grad_fn=<LogSoftmaxBackward0>)
+    tensor([[-2.8188, -2.9197, -2.8404, -3.0112, -2.9400, -2.8624, -2.8851, -2.8442,
+             -2.8083, -2.9649, -2.8651, -2.7482, -2.9246, -2.9200, -2.9655, -2.8721,
+             -2.9718, -2.9027]], grad_fn=<LogSoftmaxBackward0>)
 
 
 
@@ -405,7 +405,7 @@ of the greatest value:
 
  .. code-block:: none
 
-    ('Korean', 6)
+    ('English', 11)
 
 
 
@@ -446,16 +446,16 @@ language):
 
  .. code-block:: none
 
-    category = Spanish / line = Castro
-    category = Japanese / line = Kawamata
+    category = German / line = Maier
+    category = Vietnamese / line = Nghiem
+    category = Czech / line = Kazmier
     category = Vietnamese / line = Chu
-    category = Vietnamese / line = Thuy
-    category = Chinese / line = Zha
-    category = Czech / line = Petrezelka
-    category = Greek / line = Ruvelas
-    category = Greek / line = Tourna
-    category = Russian / line = Ryjikh
-    category = Arabic / line = Rahal
+    category = Spanish / line = Romero
+    category = German / line = Peter
+    category = Japanese / line = Kahae
+    category = Dutch / line = Haanrath
+    category = Korean / line = Ngai
+    category = Czech / line = Stepan
 
 
 
@@ -595,26 +595,26 @@ average of the loss.
 
  .. code-block:: none
 
-    5000 5% (0m 6s) 2.3681 Munakata / Japanese ✓
-    10000 10% (0m 12s) 2.5266 Augustin / Scottish ✗ (French)
-    15000 15% (0m 18s) 2.7536 Nisi / Chinese ✗ (Italian)
-    20000 20% (0m 25s) 1.8925 Pian / Irish ✗ (Chinese)
-    25000 25% (0m 31s) 1.2129 Nelissen / Dutch ✓
-    30000 30% (0m 37s) 0.3789 Mcintyre / Scottish ✓
-    35000 35% (0m 44s) 0.2468 Paloumbas / Greek ✓
-    40000 40% (0m 50s) 0.2195 Than / Vietnamese ✓
-    45000 45% (0m 56s) 2.7001 Unruh / English ✗ (German)
-    50000 50% (1m 2s) 1.3306 Wasem / Arabic ✓
-    55000 55% (1m 8s) 0.2018 Thai / Vietnamese ✓
-    60000 60% (1m 14s) 0.0971 Wilson / Scottish ✓
-    65000 65% (1m 20s) 0.6325 Rudaski / Polish ✓
-    70000 70% (1m 27s) 0.2908 Cabral / Portuguese ✓
-    75000 75% (1m 33s) 2.6840 Kasimor / Arabic ✗ (Czech)
-    80000 80% (1m 39s) 1.3957 Seegers / Portuguese ✗ (Dutch)
-    85000 85% (1m 45s) 0.0702 Shiroyama / Japanese ✓
-    90000 90% (1m 51s) 3.4197 Aonghuis / Greek ✗ (Irish)
-    95000 95% (1m 57s) 2.3765 Cao / Korean ✗ (Vietnamese)
-    100000 100% (2m 3s) 0.3999 Luu / Vietnamese ✓
+    5000 5% (0m 5s) 2.7169 Taverna / German ✗ (Italian)
+    10000 10% (0m 11s) 1.7616 Ta / Korean ✗ (Vietnamese)
+    15000 15% (0m 17s) 2.0395 Avetisyan / Irish ✗ (Russian)
+    20000 20% (0m 22s) 3.0928 Chromy / Scottish ✗ (Czech)
+    25000 25% (0m 28s) 1.4617 Danas / Arabic ✗ (Greek)
+    30000 30% (0m 34s) 1.2090 Meeuwsen / Dutch ✓
+    35000 35% (0m 39s) 1.1170 Jenicek / Czech ✓
+    40000 40% (0m 45s) 5.4907 Fabian / Irish ✗ (Polish)
+    45000 45% (0m 50s) 0.0575 Zdunowski / Polish ✓
+    50000 50% (0m 56s) 0.0329 Munakata / Japanese ✓
+    55000 55% (1m 2s) 2.3735 Pearce / German ✗ (English)
+    60000 60% (1m 8s) 1.8940 Meisner / German ✗ (Dutch)
+    65000 65% (1m 13s) 0.5273 Szweda / Polish ✓
+    70000 70% (1m 19s) 0.6716 Kaminski / Polish ✓
+    75000 75% (1m 25s) 3.3563 Hamer / German ✗ (English)
+    80000 80% (1m 30s) 0.1076 Romijnders / Dutch ✓
+    85000 85% (1m 36s) 0.3937 Halabi / Arabic ✓
+    90000 90% (1m 41s) 0.9019 Alves / Portuguese ✓
+    95000 95% (1m 47s) 4.8837 Serafin / Portuguese ✗ (Polish)
+    100000 100% (1m 53s) 1.2725 Ochoa / Spanish ✓
 
 
 
@@ -654,7 +654,7 @@ learning:
  .. code-block:: none
 
 
-    [<matplotlib.lines.Line2D object at 0x7fbe97cfa260>]
+    [<matplotlib.lines.Line2D object at 0x7f54e858a7a0>]
 
 
 
@@ -792,19 +792,19 @@ Running on User Input
 
 
     > Dovesky
-    (-0.18) Russian
-    (-2.11) Czech
-    (-4.06) Polish
+    (-0.48) Czech
+    (-1.23) Russian
+    (-3.10) English
 
     > Jackson
-    (-0.22) Scottish
-    (-2.37) English
-    (-3.27) Russian
+    (-0.27) Scottish
+    (-1.76) English
+    (-3.83) Czech
 
     > Satoshi
-    (-0.72) Arabic
-    (-1.91) Japanese
-    (-2.45) Italian
+    (-1.32) Arabic
+    (-1.42) Japanese
+    (-1.69) Italian
 
 
 
@@ -858,7 +858,7 @@ Exercises
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 2 minutes  10.873 seconds)
+   **Total running time of the script:** ( 1 minutes  59.681 seconds)
 
 
 .. _sphx_glr_download_intermediate_char_rnn_classification_tutorial.py:

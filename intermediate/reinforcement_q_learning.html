@@ -656,11 +656,14 @@ episode.</p></li>
 <span class="n">episode_durations</span> <span class="o">=</span> <span class="p">[]</span>
 
 
-<span class="k">def</span> <span class="nf">plot_durations</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">plot_durations</span><span class="p">(</span><span class="n">show_result</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
     <span class="n">durations_t</span> <span class="o">=</span> <a class="sphx-glr-backref-module-torch sphx-glr-backref-type-py-function" href="https://pytorch.org/docs/stable/generated/torch.tensor.html#torch.tensor" title="torch.tensor"><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span></a><span class="p">(</span><span class="n">episode_durations</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><a class="sphx-glr-backref-module-torch sphx-glr-backref-type-py-class sphx-glr-backref-instance" href="https://pytorch.org/docs/stable/tensor_attributes.html#torch.dtype" title="torch.dtype"><span class="n">torch</span><span class="o">.</span><span class="n">float</span></a><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Training...'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">show_result</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Result'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">'Training...'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'Episode'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'Duration'</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">durations_t</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
@@ -672,8 +675,11 @@ episode.</p></li>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>  <span class="c1"># pause a bit so that plots are updated</span>
     <span class="k">if</span> <span class="n">is_ipython</span><span class="p">:</span>
-        <span class="n">display</span><span class="o">.</span><span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">display</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">())</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">show_result</span><span class="p">:</span>
+            <span class="n">display</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">())</span>
+            <span class="n">display</span><span class="o">.</span><span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">display</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -793,11 +799,12 @@ can produce better results if convergence is not observed.</p>
             <span class="k">break</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Complete'</span><span class="p">)</span>
+<span class="n">plot_durations</span><span class="p">(</span><span class="n">show_result</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ioff</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="Training..." class="sphx-glr-single-img" src="../_images/sphx_glr_reinforcement_q_learning_001.png" srcset="../_images/sphx_glr_reinforcement_q_learning_001.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Complete
+<img alt="Result" class="sphx-glr-single-img" src="../_images/sphx_glr_reinforcement_q_learning_001.png" srcset="../_images/sphx_glr_reinforcement_q_learning_001.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Complete
 </pre></div>
 </div>
 <p>Here is the diagram that illustrates the overall resulting data flow.</p>
@@ -810,7 +817,7 @@ replay memory and also run optimization step on every iteration.
 Optimization picks a random batch from the replay memory to do training of the
 new policy. The “older” target_net is also used in optimization to compute the
 expected Q values. A soft update of its weights are performed at every step.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 9 minutes  6.344 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 8 minutes  13.372 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-intermediate-reinforcement-q-learning-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/6ea0e49c7d0da2713588ef1a3b64eb35/reinforcement_q_learning.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">reinforcement_q_learning.py</span></code></a></p>

@@ -382,7 +382,7 @@ The full process for preparing the data is:
     Counted words:
     fra 4345
     eng 2803
-    ['tu es un sale menteur !', 'you re a filthy liar !']
+    ['nous sommes pieges !', 'we re trapped !']
 
 
 
@@ -1036,21 +1036,21 @@ reasonable results.
 
  .. code-block:: none
 
-    1m 24s (- 19m 46s) (5000 6%) 2.8428
-    2m 41s (- 17m 30s) (10000 13%) 2.2689
-    3m 58s (- 15m 53s) (15000 20%) 1.9747
-    5m 14s (- 14m 26s) (20000 26%) 1.7508
-    6m 31s (- 13m 2s) (25000 33%) 1.5317
-    7m 48s (- 11m 42s) (30000 40%) 1.3904
-    9m 3s (- 10m 21s) (35000 46%) 1.2102
-    10m 19s (- 9m 1s) (40000 53%) 1.1046
-    11m 34s (- 7m 43s) (45000 60%) 1.0002
-    12m 50s (- 6m 25s) (50000 66%) 0.8707
-    14m 5s (- 5m 7s) (55000 73%) 0.8142
-    15m 21s (- 3m 50s) (60000 80%) 0.7376
-    16m 37s (- 2m 33s) (65000 86%) 0.6766
-    17m 53s (- 1m 16s) (70000 93%) 0.6263
-    19m 9s (- 0m 0s) (75000 100%) 0.5644
+    1m 22s (- 19m 18s) (5000 6%) 2.8842
+    2m 39s (- 17m 15s) (10000 13%) 2.3043
+    3m 55s (- 15m 40s) (15000 20%) 1.9424
+    5m 11s (- 14m 16s) (20000 26%) 1.7407
+    6m 27s (- 12m 55s) (25000 33%) 1.5356
+    7m 44s (- 11m 36s) (30000 40%) 1.3327
+    9m 0s (- 10m 18s) (35000 46%) 1.2190
+    10m 17s (- 9m 0s) (40000 53%) 1.1022
+    11m 34s (- 7m 42s) (45000 60%) 0.9479
+    12m 50s (- 6m 25s) (50000 66%) 0.8986
+    14m 7s (- 5m 8s) (55000 73%) 0.8079
+    15m 23s (- 3m 50s) (60000 80%) 0.7256
+    16m 39s (- 2m 33s) (65000 86%) 0.6573
+    17m 55s (- 1m 16s) (70000 93%) 0.6105
+    19m 11s (- 0m 0s) (75000 100%) 0.5475
 
 
 
@@ -1071,45 +1071,45 @@ reasonable results.
 
  .. code-block:: none
 
-    > nous tentons de reduire les depenses .
-    = we re trying to cut down on expenses .
-    < we re having to have the . <EOS>
+    > je suis finlandais mais je parle aussi suedois .
+    = i am finnish but i speak also swedish .
+    < i am finnish but i also also also . <EOS>
 
-    > vous etes matinal .
-    = you are early .
-    < you re early . <EOS>
+    > je suis au dessus .
+    = i m upstairs .
+    < i m at the . <EOS>
 
-    > nous ne sommes pas impliques .
-    = we re not involved .
-    < we aren t involved . <EOS>
+    > nous ne sommes pas invitees .
+    = we re not invited .
+    < we re not invited . <EOS>
 
-    > il est comme mort .
-    = he is as good as dead .
-    < he is as as as dead . <EOS>
+    > je suis profondement offense par ceci .
+    = i m deeply offended by this .
+    < i m deeply offended by this . <EOS>
 
-    > je suis immunisee .
-    = i m immune .
-    < i m disgusted . <EOS>
+    > tu preches une convaincue .
+    = you re preaching to the choir .
+    < you re preaching to the choir . <EOS>
 
-    > nous sommes maintenant prets .
-    = we re ready now .
-    < we re ready now . <EOS>
+    > tu es deux fois plus forte que moi .
+    = you are twice as strong as me .
+    < you are twice as strong as i am . .
 
-    > il est a son bureau .
-    = he is at his office .
-    < he is at his desk . <EOS>
+    > je suis votre chef .
+    = i m your boss .
+    < i m your boss . <EOS>
 
-    > vous etes consciencieuses .
-    = you re conscientious .
-    < you re conscientious . <EOS>
+    > vous etes un horrible danseur .
+    = you re a terrible dancer .
+    < you re a terrible dancer . <EOS>
 
-    > nous sommes touches .
-    = we re touched .
-    < we re touched . <EOS>
+    > je rechigne a lui rendre visite .
+    = i m reluctant to visit him .
+    < i m starting to every every . <EOS>
 
-    > il est proche du president .
-    = he is close to the president .
-    < he is well to the . . <EOS>
+    > vous les terrifiez .
+    = they re terrified of you .
+    < you re always closer . <EOS>
 
 
 
@@ -1154,7 +1154,7 @@ output steps:
  .. code-block:: none
 
 
-    <matplotlib.image.AxesImage object at 0x7f1fdce5e3b0>
+    <matplotlib.image.AxesImage object at 0x7f175190aec0>
 
 
 
@@ -1245,7 +1245,7 @@ and labels:
  .. code-block:: none
 
     input = elle a cinq ans de moins que moi .
-    output = she is five years younger me . <EOS>
+    output = she s five years younger than i am . <EOS>
     /var/lib/jenkins/workspace/intermediate_source/seq2seq_translation_tutorial.py:808: UserWarning:
 
     FixedFormatter should only be used together with FixedLocator
@@ -1255,11 +1255,11 @@ and labels:
     FixedFormatter should only be used together with FixedLocator
 
     input = elle est trop petit .
-    output = she s too loud . <EOS>
+    output = she is too drunk . <EOS>
     input = je ne crains pas de mourir .
-    output = i m not scared to die . <EOS>
+    output = i m not scared of die . <EOS>
     input = c est un jeune directeur plein de talent .
-    output = he s a talented young great . <EOS>
+    output = he s a talented young young . <EOS>
 
 
 
@@ -1292,7 +1292,7 @@ Exercises
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 19 minutes  24.282 seconds)
+   **Total running time of the script:** ( 19 minutes  25.888 seconds)
 
 
 .. _sphx_glr_download_intermediate_seq2seq_translation_tutorial.py:

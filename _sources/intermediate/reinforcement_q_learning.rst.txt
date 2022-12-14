@@ -298,7 +298,7 @@ utilities:
    episode.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 245-320
+.. GENERATED FROM PYTHON SOURCE LINES 245-326
 
 .. code-block:: default
 
@@ -357,11 +357,14 @@ utilities:
     episode_durations = []
 
 
-    def plot_durations():
+    def plot_durations(show_result=False):
         plt.figure(1)
-        plt.clf()
         durations_t = torch.tensor(episode_durations, dtype=torch.float)
-        plt.title('Training...')
+        if show_result:
+            plt.title('Result')
+        else:
+            plt.clf()
+            plt.title('Training...')
         plt.xlabel('Episode')
         plt.ylabel('Duration')
         plt.plot(durations_t.numpy())
@@ -373,8 +376,11 @@ utilities:
 
         plt.pause(0.001)  # pause a bit so that plots are updated
         if is_ipython:
-            display.clear_output(wait=True)
-            display.display(plt.gcf())
+            if not show_result:
+                display.display(plt.gcf())
+                display.clear_output(wait=True)
+            else:
+                display.display(plt.gcf())
 
 
 
@@ -384,7 +390,7 @@ utilities:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 321-336
+.. GENERATED FROM PYTHON SOURCE LINES 327-342
 
 Training loop
 ^^^^^^^^^^^^^
@@ -402,7 +408,7 @@ added stability. The target network is updated at every step with a
 the hyperparameter ``TAU``, which was previously defined.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 336-384
+.. GENERATED FROM PYTHON SOURCE LINES 342-390
 
 .. code-block:: default
 
@@ -461,7 +467,7 @@ the hyperparameter ``TAU``, which was previously defined.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 385-398
+.. GENERATED FROM PYTHON SOURCE LINES 391-404
 
 Below, you can find the main training loop. At the beginning we reset
 the environment and obtain the initial ``state`` Tensor. Then, we sample
@@ -477,7 +483,7 @@ episodes. Training RL agents can be a noisy process, so restarting training
 can produce better results if convergence is not observed.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 399-449
+.. GENERATED FROM PYTHON SOURCE LINES 405-456
 
 .. code-block:: default
 
@@ -528,6 +534,7 @@ can produce better results if convergence is not observed.
                 break
 
     print('Complete')
+    plot_durations(show_result=True)
     plt.ioff()
     plt.show()
 
@@ -535,7 +542,7 @@ can produce better results if convergence is not observed.
 
 
 .. image-sg:: /intermediate/images/sphx_glr_reinforcement_q_learning_001.png
-   :alt: Training...
+   :alt: Result
    :srcset: /intermediate/images/sphx_glr_reinforcement_q_learning_001.png
    :class: sphx-glr-single-img
 
@@ -549,7 +556,7 @@ can produce better results if convergence is not observed.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 450-461
+.. GENERATED FROM PYTHON SOURCE LINES 457-468
 
 Here is the diagram that illustrates the overall resulting data flow.
 
@@ -566,7 +573,7 @@ expected Q values. A soft update of its weights are performed at every step.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 9 minutes  6.344 seconds)
+   **Total running time of the script:** ( 8 minutes  13.372 seconds)
 
 
 .. _sphx_glr_download_intermediate_reinforcement_q_learning.py:
