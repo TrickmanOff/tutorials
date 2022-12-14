@@ -300,6 +300,7 @@
 <li class="toctree-l1"><a class="reference internal" href="torchserve_with_ipex.html">Grokking PyTorch Intel CPU performance from first principles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torchserve_with_ipex_2.html">Grokking PyTorch Intel CPU performance from first principles (Part 2)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nvfuser_intro_tutorial.html">Getting Started - Accelerate Your Scripts with nvFuser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ax_multiobjective_nas_tutorial.html">Multi-Objective NAS with Ax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="torch_compile_tutorial.html">torch.compile Tutorial</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Parallel and Distributed Training</span></p>
@@ -613,9 +614,9 @@ pre-computing batches of Tensors.</p>
 <span class="nb">print</span><span class="p">(</span><a class="sphx-glr-backref-module-torch sphx-glr-backref-type-py-class sphx-glr-backref-instance" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="torch.Tensor"><span class="n">output</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>tensor([[-2.8188, -2.9197, -2.8404, -3.0112, -2.9400, -2.8624, -2.8851, -2.8442,
-         -2.8083, -2.9649, -2.8651, -2.7482, -2.9246, -2.9200, -2.9655, -2.8721,
-         -2.9718, -2.9027]], grad_fn=&lt;LogSoftmaxBackward0&gt;)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>tensor([[-2.7750, -2.9827, -2.8270, -2.8540, -2.9574, -2.8664, -2.8161, -2.8860,
+         -2.9192, -2.9269, -2.8218, -2.9357, -2.9178, -2.8762, -2.8711, -2.9918,
+         -2.9337, -2.8981]], grad_fn=&lt;LogSoftmaxBackward0&gt;)
 </pre></div>
 </div>
 <p>As you can see the output is a <code class="docutils literal notranslate"><span class="pre">&lt;1</span> <span class="pre">x</span> <span class="pre">n_categories&gt;</span></code> Tensor, where
@@ -637,7 +638,7 @@ of the greatest value:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">categoryFromOutput</span><span class="p">(</span><a class="sphx-glr-backref-module-torch sphx-glr-backref-type-py-class sphx-glr-backref-instance" href="https://pytorch.org/docs/stable/tensors.html#torch.Tensor" title="torch.Tensor"><span class="n">output</span></a><span class="p">))</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>('English', 11)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>('Czech', 0)
 </pre></div>
 </div>
 <p>We will also want a quick way to get a training example (a name and its
@@ -659,16 +660,16 @@ language):</p>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'category ='</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="s1">'/ line ='</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>category = German / line = Maier
-category = Vietnamese / line = Nghiem
-category = Czech / line = Kazmier
-category = Vietnamese / line = Chu
-category = Spanish / line = Romero
-category = German / line = Peter
-category = Japanese / line = Kahae
-category = Dutch / line = Haanrath
-category = Korean / line = Ngai
-category = Czech / line = Stepan
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>category = Scottish / line = Grant
+category = Czech / line = Dolezal
+category = Spanish / line = Arce
+category = Arabic / line = Safar
+category = English / line = Farley
+category = Russian / line = Verba
+category = Czech / line = Prachar
+category = Portuguese / line = Madeira
+category = Portuguese / line = Matos
+category = Japanese / line = Hirota
 </pre></div>
 </div>
 </div>
@@ -758,26 +759,26 @@ average of the loss.</p>
         <span class="n">current_loss</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>5000 5% (0m 5s) 2.7169 Taverna / German ✗ (Italian)
-10000 10% (0m 11s) 1.7616 Ta / Korean ✗ (Vietnamese)
-15000 15% (0m 17s) 2.0395 Avetisyan / Irish ✗ (Russian)
-20000 20% (0m 22s) 3.0928 Chromy / Scottish ✗ (Czech)
-25000 25% (0m 28s) 1.4617 Danas / Arabic ✗ (Greek)
-30000 30% (0m 34s) 1.2090 Meeuwsen / Dutch ✓
-35000 35% (0m 39s) 1.1170 Jenicek / Czech ✓
-40000 40% (0m 45s) 5.4907 Fabian / Irish ✗ (Polish)
-45000 45% (0m 50s) 0.0575 Zdunowski / Polish ✓
-50000 50% (0m 56s) 0.0329 Munakata / Japanese ✓
-55000 55% (1m 2s) 2.3735 Pearce / German ✗ (English)
-60000 60% (1m 8s) 1.8940 Meisner / German ✗ (Dutch)
-65000 65% (1m 13s) 0.5273 Szweda / Polish ✓
-70000 70% (1m 19s) 0.6716 Kaminski / Polish ✓
-75000 75% (1m 25s) 3.3563 Hamer / German ✗ (English)
-80000 80% (1m 30s) 0.1076 Romijnders / Dutch ✓
-85000 85% (1m 36s) 0.3937 Halabi / Arabic ✓
-90000 90% (1m 41s) 0.9019 Alves / Portuguese ✓
-95000 95% (1m 47s) 4.8837 Serafin / Portuguese ✗ (Polish)
-100000 100% (1m 53s) 1.2725 Ochoa / Spanish ✓
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>5000 5% (0m 5s) 2.7203 Mushashibo / Italian ✗ (Japanese)
+10000 10% (0m 11s) 3.0632 Stablum / Arabic ✗ (Italian)
+15000 15% (0m 17s) 2.8940 De leon / Scottish ✗ (Spanish)
+20000 20% (0m 22s) 1.1155 So / Korean ✓
+25000 25% (0m 28s) 0.1407 Jablochkov / Russian ✓
+30000 30% (0m 33s) 1.3099 Otani / Italian ✗ (Japanese)
+35000 35% (0m 39s) 1.3652 Beloshapka / Czech ✗ (Russian)
+40000 40% (0m 45s) 0.7115 Torres / Portuguese ✓
+45000 45% (0m 50s) 0.6713 Zhong / Chinese ✓
+50000 50% (0m 56s) 0.5322 Ferreira / Portuguese ✓
+55000 55% (1m 1s) 1.2202 Richelieu / French ✓
+60000 60% (1m 7s) 3.3328 Makricosta / Czech ✗ (Greek)
+65000 65% (1m 13s) 0.5672 Szwarc / Polish ✓
+70000 70% (1m 18s) 0.3345 Rosario / Portuguese ✓
+75000 75% (1m 24s) 1.4241 Schroder / Dutch ✗ (German)
+80000 80% (1m 29s) 0.7980 Gagnier / French ✓
+85000 85% (1m 35s) 1.8837 Nuallan / Scottish ✗ (Irish)
+90000 90% (1m 41s) 3.3066 Fisk / Chinese ✗ (English)
+95000 95% (1m 46s) 1.5852 Campos / Greek ✗ (Portuguese)
+100000 100% (1m 52s) 0.0326 Bashkov / Russian ✓
 </pre></div>
 </div>
 </div>
@@ -792,7 +793,7 @@ learning:</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">all_losses</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="char rnn classification tutorial" class="sphx-glr-single-img" src="../_images/sphx_glr_char_rnn_classification_tutorial_001.png" srcset="../_images/sphx_glr_char_rnn_classification_tutorial_001.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D object at 0x7f54e858a7a0&gt;]
+<img alt="char rnn classification tutorial" class="sphx-glr-single-img" src="../_images/sphx_glr_char_rnn_classification_tutorial_001.png" srcset="../_images/sphx_glr_char_rnn_classification_tutorial_001.png"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D object at 0x7f477b0361a0&gt;]
 </pre></div>
 </div>
 </div>
@@ -883,19 +884,19 @@ English (perhaps because of overlap with other languages).</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; Dovesky
-(-0.48) Czech
-(-1.23) Russian
-(-3.10) English
+(-0.84) Russian
+(-1.13) Czech
+(-2.03) English
 
 &gt; Jackson
-(-0.27) Scottish
-(-1.76) English
-(-3.83) Czech
+(-1.06) Scottish
+(-1.23) Russian
+(-1.39) English
 
 &gt; Satoshi
-(-1.32) Arabic
-(-1.42) Japanese
-(-1.69) Italian
+(-0.24) Japanese
+(-2.61) Arabic
+(-3.57) Italian
 </pre></div>
 </div>
 <p>The final versions of the scripts <a class="reference external" href="https://github.com/spro/practical-pytorch/tree/master/char-rnn-classification">in the Practical PyTorch
@@ -939,7 +940,7 @@ output of predictions.</p>
 </ul>
 </li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  59.681 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  59.083 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-intermediate-char-rnn-classification-tutorial-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../_downloads/37c8905519d3fd3f437b783a48d06eac/char_rnn_classification_tutorial.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">char_rnn_classification_tutorial.py</span></code></a></p>
